@@ -68,7 +68,24 @@ document.writeln(cities);
 document.writeln(cities.join("|"));
 // reverse
 document.writeln(cities.reverse());
-// slice
-document.writeln(cities.slice(2, 5));
-//sort(compr funct), splice
+// slice returns a subarr w/o modifying the original
+document.writeln("slice=> " + cities.slice(2, 5));
+document.writeln("remaining=> " + cities);
+
+// sort(compr funct)
+document.writeln("Sorted=> " + cities.sort());
+// sort with comparator func; doesn't seem to work
+document.writeln("Sorted/Compr=> " + cities.sort(function (e1, e2) {
+    return e1.length < e2.length;
+}));
+var cities = ["NewYork", "NewJersey", "Newark", "Brooklyn", "Bronx", "Hoboken"];
+// splice: deletes from the array the specified slice and returns the deleted slice.
+document.writeln("spliced1=> " + cities.splice(2, 3));
+document.writeln("remaining1=> " + cities);
+
+var cities = ["NewYork", "NewJersey", "Newark", "Brooklyn", "Bronx", "Hoboken"];
+// We can replace the spliced out elems in the array with any number of new items
+document.writeln("spliced2=> " + cities.splice(2, 3, "Phili", "Houston"));
+document.writeln("remaining2=> " + cities);
+
 
