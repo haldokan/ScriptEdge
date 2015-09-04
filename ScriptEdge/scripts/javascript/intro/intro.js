@@ -10,40 +10,40 @@
 //=============================================
 // Numbers
 //=============================================
-document.writeln(Math.PI);
+console.log(Math.PI);
 // must always specify the base to avoid surprises
-document.writeln(parseInt("00123", 10));
-document.writeln(parseInt("00777", 10));
+console.log(parseInt("00123", 10));
+console.log(parseInt("00777", 10));
 // convert binary: 1001 is 9
-document.writeln(parseInt("1001", 2));
-document.writeln(123 + 2);
+console.log(parseInt("1001", 2));
+console.log(123 + 2);
 //special value NaN
-document.writeln(isNaN(parseInt("foobar"), 10));
+console.log(isNaN(parseInt("foobar"), 10));
 // Infinity
-document.writeln(isFinite(1 / 0));
-document.writeln(isFinite(-Infinity));
+console.log(isFinite(1 / 0));
+console.log(isFinite(-Infinity));
 // parseInt and parseFloat reads the string until the first unvalid char and convert the valid part!
-document.writeln(parseInt("0123foobar"));
+console.log(parseInt("0123foobar"));
 
 //=============================================
 // Strings
 //=============================================
-document.writeln("foobar".length);
-document.writeln("foobar".charAt(0));
-document.writeln("foobar".replace("bar", "baz"));
-document.writeln("foobar".toUpperCase());
+console.log("foobar".length);
+console.log("foobar".charAt(0));
+console.log("foobar".replace("bar", "baz"));
+console.log("foobar".toUpperCase());
 
 //=============================================
 // Other types
 //=============================================
 // undefined is a type for vars that are not initialized (consts), and null indicate a deliberate non-value
 // boolean false is: false, 0, empty string, Nan, null, and undefined. All other values are true
-document.writeln(Boolean(""));
-document.writeln(Boolean(null));
-document.writeln(Boolean(0));
-document.writeln(Boolean("foobar"));
-document.writeln(Boolean("123"));
-document.writeln(null && "123");
+console.log(Boolean(""));
+console.log(Boolean(null));
+console.log(Boolean(0));
+console.log(Boolean("foobar"));
+console.log(Boolean("123"));
+console.log(null && "123");
 
 //=============================================
 // Variables
@@ -59,18 +59,18 @@ var v2 = "foobar";
 // Operators
 //=============================================
 var v = 3;
-document.writeln(v + 4);
-document.writeln("foo" + "bar");
+console.log(v + 4);
+console.log("foo" + "bar");
 // bcz javascript parse forward only it adds 3 an 4 then it realizes that the next operand is string
-document.writeln(3 + 4 + "foobar");
+console.log(3 + 4 + "foobar");
 //compare with previous line; the + here works as string concatenation
-document.writeln("foobar" + 3 + 4);
+console.log("foobar" + 3 + 4);
 
 // 2 equality operators == which performs type coercion and === which does not
-document.writeln(1 == true); // true since 1 is coerced to boolean true
-document.writeln(1 === true); // false since 1 is not converted and is considered a number
+console.log(1 == true); // true since 1 is coerced to boolean true
+console.log(1 === true); // false since 1 is not converted and is considered a number
 //there are also != and !==
-document.writeln("foobar" == "foobar");
+console.log("foobar" == "foobar");
 
 //=============================================
 // Control structures
@@ -84,47 +84,47 @@ if (lang == "German") {
 } else {
     greeting = "Hello"
 }
-document.writeln(lang + " - " + greeting);
+console.log(lang + " - " + greeting);
 
 var i = 0;
 while (i++ < 3) {
-    document.writeln("loop" + i);
+    console.log("loop" + i);
 }
 // do-while insure loop is executed at least once similar to java
 var j = -3;
 do {
-    document.writeln("loop" + j);
+    console.log("loop" + j);
 } while (j > 5);
 
 // for loop comme toujours
 for (var i = 0; i < 3; i++) {
-    document.writeln("fooloop" + i);
+    console.log("fooloop" + i);
 }
 
 // && and || operator short-circuit similar to other languages
 var str;
 var strLen = str && str.length(); // strLen will have undefined val
-document.writeln(strLen);
+console.log(strLen);
 
 var strLen2 = str || 7;
-document.writeln(strLen2);
+console.log(strLen2);
 
 // ternary operator similar to Java
 var income = 10000;
 var exemptFromTaxes = (income < 12000) ? "yes" : "no";
-document.writeln(exemptFromTaxes);
+console.log(exemptFromTaxes);
 exemptFromTaxes = (income < 8000) ? true : false;
-document.writeln(exemptFromTaxes);
+console.log(exemptFromTaxes);
 
 // switch stmt can work with numbers or strings. Thw switch and case stmts can have expressions (switch(intval + 3), or case 1 + 2
 var language = "French";
 switch (language) {
     case "French":
-        document.writeln("Salut");
+        console.log("Salut");
         break;
     case "German":
-        document.writeln("Hallo");
+        console.log("Hallo");
         break;
     default:
-        document.writeln("Hello");
+        console.log("Hello");
 }

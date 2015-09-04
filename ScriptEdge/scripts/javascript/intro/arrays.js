@@ -9,22 +9,22 @@
 var a = new Array();
 a[0] = "foo";
 a[1] = "bar";
-document.writeln(a); // actually prints the array
-document.writeln(a.length);
+console.log(a); // actually prints the array
+console.log(a.length);
 
 // more convenient
 var a = [1, 2, 3];
-document.writeln(a.length);
+console.log(a.length);
 
 // unlike java array they behave like maps
 a[10] = 77;
 // length is the highest index + 1 = 78
-document.writeln(a.length);
+console.log(a.length);
 // accessing and element at an index that is not defined returns "undefined"
-document.writeln(a[6]);
+console.log(a[6]);
 // iterate over an array; note how we calculate the len so it is not recalculated at every iteration (unlike Java)
 for (var i = 0, len = a.length; i < len; i++) {
-    document.writeln(a[i]);
+    console.log(a[i]);
     if (a[i] === undefined) {
         document.write("|");
     }
@@ -36,56 +36,56 @@ for (var i = 0, len = a.length; i < len; i++) {
 // this idiom however.
 a[3] = 66;
 for (var i = 0, item; item = a[i++];) {
-    document.writeln(item);
+    console.log(item);
 }
 
 //adding an element to the array
 var a = [11];
 a.push(22);
-document.writeln(a);
+console.log(a);
 
 // iterate using forEach (added in ECMA5)
 ["foo", "bar", "baz"].forEach(function (currVal, ndx, arr) {
-    document.writeln(ndx + "->" + currVal + "/" + arr.length);
+    console.log(ndx + "->" + currVal + "/" + arr.length);
 });
 
 // some array methods
 var cities = ["NewYork", "NewJersey", "Newark", "Brooklyn", "Bronx", "Hoboken"];
-document.writeln(cities.toString());
+console.log(cities.toString());
 //add to the end of the array
 cities.push("FortLee", "ColdSprings");
-document.writeln(cities.toString());
+console.log(cities.toString());
 // add to the start of the array
 cities.unshift("Houston", "LosAngelese");
-document.writeln(cities.toString());
+console.log(cities.toString());
 // pop from end of the array
 cities.pop();
-document.writeln(cities.toString());
+console.log(cities.toString());
 // pop from the start of the arr
 cities.shift();
-document.writeln(cities);
+console.log(cities);
 // convert to string separated by 'sep'
-document.writeln(cities.join("|"));
+console.log(cities.join("|"));
 // reverse
-document.writeln(cities.reverse());
+console.log(cities.reverse());
 // slice returns a subarr w/o modifying the original
-document.writeln("slice=> " + cities.slice(2, 5));
-document.writeln("remaining=> " + cities);
+console.log("slice=> " + cities.slice(2, 5));
+console.log("remaining=> " + cities);
 
 // sort(compr funct)
-document.writeln("Sorted=> " + cities.sort());
+console.log("Sorted=> " + cities.sort());
 // sort with comparator func; doesn't seem to work
-document.writeln("Sorted/Compr=> " + cities.sort(function (e1, e2) {
+console.log("Sorted/Compr=> " + cities.sort(function (e1, e2) {
     return e1.length < e2.length;
 }));
 var cities = ["NewYork", "NewJersey", "Newark", "Brooklyn", "Bronx", "Hoboken"];
 // splice: deletes from the array the specified slice and returns the deleted slice.
-document.writeln("spliced1=> " + cities.splice(2, 3));
-document.writeln("remaining1=> " + cities);
+console.log("spliced1=> " + cities.splice(2, 3));
+console.log("remaining1=> " + cities);
 
 var cities = ["NewYork", "NewJersey", "Newark", "Brooklyn", "Bronx", "Hoboken"];
 // We can replace the spliced out elems in the array with any number of new items
-document.writeln("spliced2=> " + cities.splice(2, 3, "Phili", "Houston"));
-document.writeln("remaining2=> " + cities);
+console.log("spliced2=> " + cities.splice(2, 3, "Phili", "Houston"));
+console.log("remaining2=> " + cities);
 
 
