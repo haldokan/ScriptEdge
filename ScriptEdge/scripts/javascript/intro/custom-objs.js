@@ -43,7 +43,7 @@ function DateFormat(year, month, day) {
     this.euFormatFunc = euFormat;
 }
 
-var dateFmt = new DateFormat(2015, 09, 02);
+var dateFmt = new DateFormat(2015, 9, 2);
 document.writeln("USfmt=>" + dateFmt.usFormatFunc());
 document.writeln("EUfmt=>" + dateFmt.euFormatFunc());
 
@@ -63,7 +63,7 @@ DateFormat2.prototype.usFormatFunc = function() {
 DateFormat2.prototype.euFormatFunc = function() {
     return this.day + "/" + this.month + "/" + this.year;
 };
-var dateFmt2 = new DateFormat2(2015, 09, 02);
+var dateFmt2 = new DateFormat2(2015, 9, 2);
 document.writeln("USfmt2=>" + dateFmt2.usFormatFunc());
 document.writeln("EUfmt2=>" + dateFmt2.euFormatFunc());
 
@@ -74,7 +74,47 @@ DateFormat2.prototype.toString = function() {
 };
 document.writeln(dateFmt2.toString());
 
-// functions can be defined inside other funcs. That can be used for encapsulation and reduding the num of funcs in the global space
+// functions can be defined inside other funcs. That can be used for encapsulation and redusing the num of funcs in the global space
+// innder funcs have access to the vars of their outer funcs -> closures. More on that later on
+//apply is used to specify the 'this' in function calls - to illustrate that we will impl javascript 'new' (w/o the prototype)
+// this is not something we would be doing often
+function basicNew(cntr, args) {
+    var newObj = {};
+    cntr.apply(newObj, args); // apply can take an arr or a comman-sep list of args
+    return newObj;
+}
+// basicNew(DateFormat2, arr) is roughly equivalent to new DateFormat2(arr)
+var dateFmt3 = basicNew(DateFormat2, [2015, 9, 4]);
+document.writeln("basicNew=> " + dateFmt3.year + "/" + dateFmt3.month + "/" + dateFmt3.day);
 
-// apply and call: specifiy the object that should be used as 'this' in functions
+// 'call' also used to specify the 'this' for a func
+var dateFmt4 = new DateFormat2(2015, 8, 16);
+function expired(badStorage, badTransport) {
+    return this.year <= 2015 && this.month < 8 || badStorage || badTransport;
+}
+document.writeln("expired1=> " + expired.call(dateFmt4, true, false));
+document.writeln("expired2=> " + expired.call(dateFmt4, false, false));
 
+// Closures in javascript are similar to those of Python. Here's what we call 'partial' in python
+// note how the closure is used to keep the state around for the 'taxer' function; that's why closure can be used to keep
+// state instead of using objects.
+function taxing(state) {
+    var taxer = function(income) {
+        if (state === "NY") {
+            return income * 0.70;
+        } else if (state === "NJ") {
+            return income * 0.65;
+        } else {
+            return undefined;
+        }
+    };
+    return taxer;
+}
+//get a NY taxer
+var nyTaxer = taxing("NY");
+// get a NJ taxer
+var njTaxer = taxing("NJ");
+
+// apply ny and nj taxes to income
+document.writeln("nyTax=> " + nyTaxer(1000));
+document.writeln("njTax=> " + njTaxer(1000));
