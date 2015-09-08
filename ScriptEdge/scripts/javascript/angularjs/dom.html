@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="" ng-init="disabled=true;hour=14">
+    <!-- When the checkbox is checked the 'Click Here!' butten is disable. Unchecking the box enables the button-->
+    <p>
+        <button ng-disabled="disabled">Click Here!</button>
+    </p>
+    <p>
+        <input type="checkbox" ng-model="disabled">disabler
+    </p>
+    <p>
+        {{disabled}}
+    </p>
+    <!-- hour is init in ng-init -->
+    <p ng-show="hour > 12">It is Afternoon</p>
+    <p ng-hide="hour > 12">It is Morning</p>
+</div>
+</body>
+</html>

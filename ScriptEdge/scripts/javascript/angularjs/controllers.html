@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Apps and Controllers</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body>
+<p>Change the the values in the text fields</p>
+<div ng-app="intro" ng-controller="introContr">
+    Vehicle Brand: <input type="text" ng-model="brand"><br>
+    Vehicle Type: <input type="text" ng-model="type"><br>
+    <p>Change criteria to a country name and see how the list changes along</p>
+    Filter Criteria: <input type="text" ng-model="criteria"><br>
+    <br>
+    <!-- using the currency filter -->
+    Vehicle: {{brand + " " + type + " over " + (40000 | currency)}}
+    <!-- li is for bolted lines and ul for indentation-->
+    <ul>
+        <li ng-repeat="c in sorter()">
+            <!-- using uppercase filter -->
+            {{(c.country | uppercase) + "/" + c.pop}}
+        </li>
+    </ul>
+    <!-- do similar thing using Angular filters -->
+    <ul>
+        <li ng-repeat="c in countries | filter:orderBy:'pop'">
+            <!-- using uppercase filter -->
+            {{(c.country | lowercase) + "/" + c.pop}}
+        </li>
+    </ul>
+    <ul>
+        <!-- note that we are filtering by a ng-model (above) -->
+        <li ng-repeat="c in countries | filter:criteria | filter:orderBy:'pop'">
+            <!-- using uppercase filter -->
+            {{(c.country | lowercase) + "/" + c.pop}}
+        </li>
+    </ul>
+</div>
+<!-- Angular controllers in large files are normally kept in external javascript files-->
+<script src="countries-controller.js"></script>
+</body>
+</html>
