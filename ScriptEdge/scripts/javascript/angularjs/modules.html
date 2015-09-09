@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AngularJS Modules</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<!--
+It is common in Angular apps to keep the apps and controller in js scripts. Global functions in js are discouraged bcz
+they pollute the global space and can be inadvertently overwritten by other scriptsL. Angular makes all func declarations scoped to the module
+where where they are declared. We can define module dependencies when creating the app using the array arg in
+angular.module("myapp", [])
+-->
+<body>
+<div ng-app="modules" ng-controller="modulesContr">
+    {{ brand + " " + type}}
+</div>
+
+<script src="app1.js"></script>
+<script src="contr1.js"></script>
+</body>
+</html>

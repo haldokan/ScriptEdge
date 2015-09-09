@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AngularJS Validation</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<!--
+forms and controls can validate and notify users of errors
+-->
+<body>
+<!-- Note that we here specify the ng-app and controller in the form instead of 'div' -->
+<form ng-app="validation" ng-controller="validationContr" name="validForm" novalidate>
+    <p>Email:<br>
+        <input type="email" name="email" ng-model="email" required>
+        <!-- in addition to $invalid and $dirty we have $valid and $pristine -->
+        <span style="color:red" ng-show="validForm.email.$dirty && validForm.email.$invalid">
+            <span ng-show="validForm.email.$error.required">Email is required</span>
+            <span ng-show="validForm.email.$error.email">Invalid email</span>
+        </span>
+    </p>
+    <p>
+        <input type="submit" ng-disabled="validForm.email.$dirty && validForm.email.$invalid"/>
+    </p>
+</form>
+<script>
+    var app = angular.module("validation", []);
+    app.controller("validationContr", function ($scope) {
+        // can use angular api in js: lowercase, toString, isString, isNumber, etc.
+        $scope.email = angular.uppercase("haldokan@gmail.com");
+    });
+</script>
+</body>
+</html>
