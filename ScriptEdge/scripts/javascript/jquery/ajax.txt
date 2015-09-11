@@ -1,0 +1,2 @@
+<h2>What is AJAX?</h2>
+<p id="p1">AJAX is the art of exchanging data with a server, and updating parts of a web page w/o reloading the whole page</p>
