@@ -70,7 +70,7 @@ function $http(url) {
             return core.ajax('DELETE', url, args);
         }
     };
-};
+}
 // End A
 
 // B-> Here you define its functions and its payload
