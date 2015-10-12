@@ -40,7 +40,8 @@ $(document).ready(function () {
         setTimeout(function () {
             dfd.resolve("running");
         }, 3000);
-
+        // callback when deferred is resolved. We also have deferred.fail() (rejection), deferred.always (resolved or
+        // rejected), deferred.notify(progress)
         stateKeeper.done(function (state) {
             stateKeeper.updateState(state);
         }).updateState("starting");
