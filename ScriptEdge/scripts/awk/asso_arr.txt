@@ -1,0 +1,10 @@
+total 104
+-rw-r--r--  1 haytham  1696710306      0 Dec  2 15:52 arr.txt
+-rw-r--r--  1 john  1696710306  20639 Sep  2 09:37 build-and-deployment.sh
+-rwxr-xr-x  1 haytham 1696710306    124 Dec  2 13:23 bytes2ip_awk.sh
+-rwxr-xr-x  1 bob  1696710306     49 Dec  1 15:53 bytes2ip_sed.sh
+-rw-r--r--  1 haytham  1696710306   1389 Dec  1 17:38 clf1.log
+-rwxr-xr-x  1 haytham  1696710306     94 Dec  2 13:07 file_owner.awk
+-rwxr-xr-x  1 bob  1696710306    125 Dec  2 13:02 file_owner.sh
+-rw-r--r--  1 john  1696710306   1281 Sep  2 09:37 sample-profile.p
+-rwxr-xr-x  1 tim  1696710306    468 Dec  2 14:03 wc_stats.awk

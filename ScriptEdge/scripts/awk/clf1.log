@@ -1,0 +1,14 @@
+127.0.0.1 jdoe "john doe" [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 2326
+127.0.0.2 jdoe "john doe" [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 2326
+127.0.0.3 jdoe "john doe" [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 2326
+127.0.0.1 jdoe "john doe" [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 100
+127.0.0.1 jdoe "john doe" [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 100
+127.0.0.1 jdoe "john doe" [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 100
+127.0.0.3 jdoe "john doe" [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 100
+127.0.0.4 jdoe "john doe" [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 100
+127.0.0.1 jsmith "john smith" [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 100
+127.0.0.3 jsmith "john smith" [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 100
+127.0.0.1 jsmith "john smith" [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 100
+127.0.0.2 jsmith "john smith" [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 100
+127.0.0.1 jsmith "john smith" [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 100
+127.0.0.5 jsmith "john smith" [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 100
