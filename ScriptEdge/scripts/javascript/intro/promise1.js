@@ -4,7 +4,7 @@
 'use strict';
 var promiseCount = 0;
 
-function testPromise() {
+module.exports.testPromise = function() {
     var thisPromiseCount = ++promiseCount;
 
     console.log('beforeend', thisPromiseCount +
@@ -44,4 +44,4 @@ function testPromise() {
 
     console.log('beforeend', thisPromiseCount +
     ') Promise made (Sync code terminated)');
-}
+};
