@@ -27,12 +27,20 @@ class Truck extends Vehicle {
   }
 }
 
-let vehicle = new Vehicle(4, 'Ford');
 let truck = new Truck(8, 'Mazda', 18, 3, 300, 'NY-NJ');
 
-console.log('vehicle ', vehicle);
-console.log('truck  ', truck);
+let truckProto = Object.getPrototypeOf(Truck);
+// this is different from the instance proto below
+console.log('Truck class prototype', truckProto);
 
+let truckInstanceProto = Object.getPrototypeOf(truck);
+truckInstanceProto.brand = 'Mercedes';
+console.log('truck instance prototype', truckInstanceProto);
+
+truck.brand = 'XXX-MACK';
+console.log('truck brand', truck.brand);
+// still the old value (because the inheritance model is prototypical)
+console.log('truck brand from instance proto ', truckInstanceProto.brand);
 
 let vehicle2 = new Vehicle();
 Object.freeze(vehicle2);
