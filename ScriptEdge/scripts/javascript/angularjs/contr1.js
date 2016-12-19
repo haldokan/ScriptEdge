@@ -3,5 +3,5 @@
  */
 app1.controller("modulesContr", function($scope){
     $scope.brand = "GMC";
-    $scope.type = "Truck";
+  $scope.type = "truck";
 });

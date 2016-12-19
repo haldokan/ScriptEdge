@@ -4,7 +4,7 @@
 var app = angular.module('intro', []);
 app.controller('introContr', function($scope){
     $scope.brand = "Ford";
-    $scope.type = "Truck";
+  $scope.type = "truck";
     $scope.countries = [{country:'USA', pop:450000000}, {country:'Canada', pop:35000000},
         {country:'Germany', pop:85000000}, {country:'France',pop:60000000}, {country:'UK',pop:65000000}];
     // sort the countries by their pops

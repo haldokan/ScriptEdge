@@ -4,7 +4,7 @@
 'use strict';
 var promiseCount = 0;
 
-module.exports.testPromise = function() {
+module.exports.testPromise = async function () {
   var thisPromiseCount = ++promiseCount;
 
   console.log('beforeend', thisPromiseCount +

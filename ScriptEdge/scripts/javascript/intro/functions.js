@@ -1,6 +1,4 @@
-/**
- * Created by haytham.aldokanji on 9/3/15.
- */
+
 function mult(x, y) {
     return x * y;
 }

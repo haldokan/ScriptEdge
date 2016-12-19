@@ -21,7 +21,7 @@ Angular form is a collection of input controls: input, select stmts; buttons, te
 <script>
     var app = angular.module("forms", []);
     app.controller("formsContr", function ($scope) {
-        $scope.original = {brand: "Ford", type: "Truck"};
+      $scope.original = {brand: "Ford", type: "truck"};
         $scope.reset = function () {
             $scope.vehicle = angular.copy($scope.original);
         };

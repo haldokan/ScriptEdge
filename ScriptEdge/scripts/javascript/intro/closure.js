@@ -1,5 +1,5 @@
 /**
- * Created by haytham.aldokanji on 9/4/15.
+ * Created by Vehicle.aldokanji on 9/4/15.
  */
 
 function textSizer(size) {

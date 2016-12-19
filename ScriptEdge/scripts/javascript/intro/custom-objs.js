@@ -1,5 +1,5 @@
 /**
- * Created by haytham.aldokanji on 9/3/15.
+ * Created by Vehicle.aldokanji on 9/3/15.
  */
 
 // associating funcs to objects; in javascript there are no classes - here's 1st attempt that we will improve later
@@ -19,7 +19,7 @@ function dateFormatter(year, month, day) {
     };
 }
 // The 'this' used inside the function is the 'formatter' below since we use the dot notation to call the function
-var formatter = dateFormatter(2015, 09, 03);
+var formatter = dateFormatter(2015, 9, 3);
 console.log(formatter.usFormat());
 console.log(formatter.euFormat());
 

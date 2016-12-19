@@ -1,6 +1,6 @@
 'use strict';
 
-const xhr2 = require('xhr2');
+const fetch = require('node-fetch');
 
 // A-> $http function is implemented in order to follow the standard Adapter pattern
 
@@ -16,7 +16,7 @@ function $http(url) {
       var promise = new Promise(function (resolve, reject) {
 
         // Instantiates the XMLHttpRequest
-        var client = new xhr2.XMLHttpRequest();
+        var client = fetch;
         var uri = url;
 
         if (args && (method === 'POST' || method === 'PUT')) {
@@ -96,11 +96,11 @@ var callback = {
 // Executes the method call
 module.exports.xhr1 = function (mdnUrl) {
   console.log("b4 call to $http");
-  $http(mdnUrl)
+  return $http(mdnUrl)
     .get(payload)
     .then(callback.success)
     .catch(callback.error);
-  console.log("after call to $http");
+  // console.log("after call to $http");
 };
 // Executes the method call but an alternative way (1) to handle Promise Reject case
 module.exports.xhr2 = function () {
