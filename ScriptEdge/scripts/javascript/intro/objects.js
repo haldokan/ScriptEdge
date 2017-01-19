@@ -12,12 +12,12 @@ var obj = new Object();
 var obj = {};
 
 var blog = {
-    author: "haldokan",
-    date: new Date("2015-09-01"),
-    tag: "programming",
-    entry: {
-        text: "Blockchain technology can have disruptive effects on the way consistent global ledgers are designed and implemented"
-    }
+  author: "haldokan",
+  date: new Date("2015-09-01"),
+  tag: "programming",
+  entry: {
+    text: "Blockchain technology can have disruptive effects on the way consistent global ledgers are designed and implemented"
+  }
 };
 console.log("blog> " + blog.toString()); // it doesn't print the obj; must be a way to do that
 console.log(blog.author);
@@ -26,9 +26,9 @@ console.log(blog.entry.text);
 console.log(blog["entry"]["text"]);
 
 // Javascript does not have classes. It has functions that act like classes
-function Blog(author, entry) {
-    this.author = author;
-    this.entry = entry;
+function Blog (author, entry) {
+  this.author = author;
+  this.entry = entry;
 }
 
 // create an instance of the Blog func
@@ -46,3 +46,22 @@ console.log(myBlog["entry"]);
 // can we just add a new attr to the obj similar to Python? Sure!
 myBlog.tag = "tech";
 console.log(myBlog.tag);
+
+const identity = { name: 'John', job: 'Engineer', city: 'New Nork', salary: { amount: 50000, currency: 'USD' } };
+const objProps = Object.getOwnPropertyNames(identity);
+console.log(objProps);
+console.log(objProps[0]);
+
+Object.defineProperty(identity, 'password', {
+  value: 'secret',
+  enumerable: true,
+  writable: false,
+  configurable: false
+});
+console.log(Object.getOwnPropertyNames(identity));
+
+identity.password = 'hacked';
+//password will not change
+console.log(identity);
+
+

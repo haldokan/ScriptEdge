@@ -7,7 +7,7 @@
     "build": "NODE_PATH=./src gulp build",
     "lint": "NODE_PATH=./src gulp lint; exit 0",
     "start": "NODE_PATH=./src gulp start",
-    "test": "NODE_ENV=test babel-node test.js; exit 0"
+    "test": "NODE_ENV=test babel-node src/import-default.js; exit 0"
   },
   "keywords": [],
   "author": "haldokan",
